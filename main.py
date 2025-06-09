@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas
 
+
+# ----- day 21 Lesson -----
+
 st.set_page_config(layout="wide")
 
 col1, col2 = st.columns(2)
@@ -15,6 +18,9 @@ with col2:
 
 content2 = """Below you can find some of the apps I have built in Python. Feel free to contact me!"""
 st.write(content2)
+
+
+# ----- Day 22 Lesson -----
 
 col3, col4 = st.columns(2)
 

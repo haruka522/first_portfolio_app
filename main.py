@@ -22,7 +22,7 @@ st.write(content2)
 
 # ----- Day 22 Lesson -----
 
-col3, col4 = st.columns(2)
+col3, empty_col, col4 = st.columns([1.5,0.5,1.5])
 
 # default separator is comma, change it to semicolon if needed
 df = pandas.read_csv('007 data.csv', sep=";")
@@ -45,9 +45,15 @@ with col3:
     for i, (index, row) in enumerate(df.iterrows()):
         if i % 2 == 0:
             st.header(row["title"])
+            st.write(row["description"])
+            st.image("images/" + row["image"])
+            st.write(f"[Source Code]({row['url']})")
 
 with col4:
     # Show odd-indexed rows (1, 3, 5, ...)
     for i, (index, row) in enumerate(df.iterrows()):
         if i % 2 == 1:
             st.header(row["title"])
+            st.write(row["description"])
+            st.image("images/" + row["image"], width=400)
+            st.write(f"[Source Code]({row['url']})")
